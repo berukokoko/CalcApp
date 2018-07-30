@@ -12,10 +12,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    // ①メンバ変数を定義
+    //メンバ変数
     EditText edittext;
     EditText edittext2;
-    TextView TextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +35,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button button4 = (Button) findViewById(R.id.button4);
         button4.setOnClickListener(this);
 
-
     }
 
 
     @Override
     public void onClick(View v) {
 
-        TextView = (TextView) findViewById(R.id.TextView);
         //エディットテキスト
         edittext =(EditText)findViewById(R.id.edittext);
         //エディットテキスト2
@@ -54,22 +51,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int edit1 =Integer.parseInt(getText.toString());
         int edit2 =Integer.parseInt(getText2.toString());
         Intent intent = new Intent(this, Main2Activity.class);
+        intent.putExtra("VALUE1", edit1);
+        intent.putExtra("VALUE2", edit2);
 
-        //もしボタン1が〜
         if(v.getId()==R.id.button){
-            intent.putExtra("VALUE1", edit1);
-            intent.putExtra("VALUE2", edit2);
             startActivity(intent);
         }else if(v.getId()==R.id.button2){
-            Log.d("abc","b");
+            startActivity(intent);
         }else if(v.getId()==R.id.button3){
-            Log.d("abc","c");
+            startActivity(intent);
         }else if(v.getId()==R.id.button4){
-            Log.d("abc","d");
+            startActivity(intent);
         }else{
-            Log.d("abc","e");
+            startActivity(intent);
         }
-        //もしボタン1が
+
     }
 
 
